@@ -33,3 +33,7 @@ class TestBridgePattern(TestCase):
     def test_v2_circle_draw(self):
         v2_circle = Circle(1, 2, 3, ApiV2())
         self.assertTrue(v2_circle.draw())
+
+class TestBuilderPattern(TestCase):
+    def test_cheap_edu_laptop(self):
+        self.assertTrue()
