@@ -1,7 +1,7 @@
 class ApiV1(object):
     def draw_circle(self, x, y, radius):
         return "v1: drawing circle at {},{} - with radius = {}".format(x, y, radius)
-
+        
 
 class ApiV2(object):
     def draw_circle(self, x, y, radius):

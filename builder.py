@@ -21,6 +21,7 @@ class Laptop():
         self.has_gpu = False
         self.has_4k = False
         self.edu_sku = False
+        self.perf_sku = False
         self.ram_size = None
         self.proc_frequency = None
         self.screen_size = None
@@ -35,6 +36,11 @@ class Laptop():
 
     def set_edu_sku(self):
         self.edu_sku = True
+        self.perf_sku = False
+
+    def set_perf_sku(self):
+        self.perf_sku = True
+        self.edu_sku = False
 
     def set_ram_size(self, size):
         self.fuel = size
@@ -45,8 +51,7 @@ class Laptop():
     def set_secreen_size(self, screen):
         self.screen = screen
 
-    #Returning information about car
     def __str__(self):
-    #    json.dumps() - TODO:: WE'LL COME BACK AFTER DINNER!
-        return 
+        return self
+
 

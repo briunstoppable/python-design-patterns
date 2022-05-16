@@ -1,8 +1,12 @@
+from cgi import test
+from json import JSONDecoder
+import json
 from unittest import TestCase
 
 # Design Pattern Files
 from bridge import Circle, ApiV1, ApiV2
 from adapter import Chinese, Dari, English, Adapter
+from builder import Laptop
 
 
 class TestAdapterPattern(TestCase):
@@ -35,5 +39,15 @@ class TestBridgePattern(TestCase):
         self.assertTrue(v2_circle.draw())
 
 class TestBuilderPattern(TestCase):
+    # Assert mutual exclusivity between cheap and expensive "prebuilt" SKUs.
     def test_cheap_edu_laptop(self):
-        self.assertTrue()
+        cheap_student_laptop = Laptop()
+        cheap_student_laptop.set_edu_sku()
+        self.assertTrue(cheap_student_laptop.edu_sku)
+        self.assertFalse(cheap_student_laptop.perf_sku)
+    
+    def test_perf_sku_laptop(self):
+        perf_sku_laptop = Laptop()
+        perf_sku_laptop.set_perf_sku()
+        self.assertTrue(perf_sku_laptop.perf_sku)
+        self.assertFalse(perf_sku_laptop.edu_sku)
